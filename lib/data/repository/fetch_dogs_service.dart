@@ -4,7 +4,9 @@ import 'package:dog_pic/data/models/dogs_model.dart';
 import 'package:riverpod/riverpod.dart';
 
 class FetchDogsService {
-  final Dio dio = Dio();
+  final Dio dio;
+  // Constructor with optional Dio parameter for testing
+  FetchDogsService({Dio? dio}) : dio = dio ?? Dio();
 
   Future<DogsModel> fetchRandomDogImages() async {
     try {
