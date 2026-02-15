@@ -17,7 +17,7 @@ class FetchDogViewModel extends StateNotifier<DogFetchState> {
       state = SuccessState(dogsModel: data);
       return data;
     } catch (e) {
-      ErrorState(error: e.toString());
+      state =  ErrorState(error: e.toString());
       rethrow;
     }
   }
