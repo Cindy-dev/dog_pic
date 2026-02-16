@@ -12,10 +12,13 @@ class FetchDogViewModel extends StateNotifier<DogFetchState> {
   Future<DogsModel> fetchDogs() async {
     try {
       state = LoadingState();
+      print("object");
       final data = await ref.read(dogsServiceProvider).fetchRandomDogImages();
+      print("Ebuka");
       state = SuccessState(dogsModel: data);
       return data;
     } catch (e) {
+      print("Cindy");
       state =  ErrorState(error: e.toString());
       rethrow;
     }
