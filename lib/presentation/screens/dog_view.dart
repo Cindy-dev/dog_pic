@@ -28,20 +28,24 @@ class DogView extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   switch (dataRef) {
-                    LoadingState() => CupertinoActivityIndicator(color: Colors.red),
+                    LoadingState() => CupertinoActivityIndicator(
+                      color: Colors.red,
+                    ),
                     SuccessState() => Container(
                       margin: EdgeInsets.all(20),
                       height: 300,
                       decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(dataRef.dogsModel.message),
-                          fit: BoxFit.fill,
-                        ),
+                        image: dataRef.dogsModel.message.isEmpty
+                            ? null
+                            : DecorationImage(
+                                image: NetworkImage(dataRef.dogsModel.message),
+                                fit: BoxFit.fill,
+                              ),
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
                     ErrorState() => Text(
-                      dataRef.error,
+                      "An Error Occurred",
                       textAlign: TextAlign.center,
                     ),
                     (_) => Text(

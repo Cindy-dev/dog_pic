@@ -2,7 +2,6 @@ import 'package:dog_pic/data/models/dogs_model.dart';
 import 'package:dog_pic/logic/dog_fetch_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
-
 import '../data/repository/fetch_dogs_service.dart';
 
 class FetchDogViewModel extends StateNotifier<DogFetchState> {
