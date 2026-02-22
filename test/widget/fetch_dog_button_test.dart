@@ -34,24 +34,3 @@ void main() {
     expect(find.byType(CupertinoActivityIndicator), findsOneWidget);
   });
 }
-
-// class FakeDogsService extends FetchDogsService {
-//   @override
-//   Future<DogsModel> fetchRandomDogImages() async {
-//     return DogsModel(message: "", status: "success");
-//   }
-// }
-//
-// void main() {
-//   testWidgets('Press button calls fetchDogs()', (tester) async {
-//     await tester.pumpWidget(
-//       ProviderScope(
-//         overrides: [dogsServiceProvider.overrideWithValue(FakeDogsService())],
-//         child: const MaterialApp(home: DogView()),
-//       ),
-//     );
-//     expect(find.text('Press'), findsOneWidget);
-//     await tester.tap(find.text('Press'));
-//     await tester.pumpAndSettle();
-//   });
-// }
