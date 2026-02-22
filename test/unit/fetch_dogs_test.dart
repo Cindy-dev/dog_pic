@@ -4,8 +4,6 @@ import 'package:dog_pic/data/repository/fetch_dogs_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockFetchDog extends Mock implements FetchDogsService {}
-
 class MockDio extends Mock implements Dio {}
 
 void main() {
